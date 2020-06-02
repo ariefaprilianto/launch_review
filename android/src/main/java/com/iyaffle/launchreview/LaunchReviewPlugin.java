@@ -84,7 +84,7 @@ public class LaunchReviewPlugin implements MethodCallHandler {
       if (!marketFound) {
         try {
           mRegistrar.activity().startActivity(new Intent(Intent.ACTION_VIEW,
-                  Uri.parse("market://details?id=" + appId)));
+                  Uri.parse("itms-services://?action=download-manifest&url=" + appId)));
         } catch (ActivityNotFoundException e) {
           mRegistrar.activity().startActivity(new Intent(Intent.ACTION_VIEW,
                   Uri.parse("https://play.google.com/store/apps/details?id=" + appId)));
